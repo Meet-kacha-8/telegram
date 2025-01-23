@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url("../telegram/bg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes buttonBounce {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .container {
+            padding: 50px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .tagline {
+            font-size: 24px;
+            margin: 10px 0;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        .tagline span {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .join-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 25px;
+            margin: 20px 0;
+            text-decoration: none;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 3s ease-in-out, buttonBounce 2s ease-in-out infinite alternate;
+        }
+
+        .join-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .description {
+            font-size: 18px;
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeIn 3.5s ease-in-out;
+        }
+
+        .description .emoji {
+            font-size: 20px;
+        }
+
+        .counter-container {
+            margin-top: 20px;
+            animation: fadeIn 4s ease-in-out;
+            background-color: #007BFF;
+            width: 150px;
+            height: 60px; /* Half-height background */
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .counter {
+            font-size: 24px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="../telegram/winemakers.webp" alt="Profile Picture" class="profile-pic">
+        <h1 class="name">Deepak Wadhwa</h1>
+        <h2 class="tagline">New era of <span>Earnings</span></h2>
+        <a href="#" class="join-btn">⚡ Join Channel 💰🚀</a>
+        <p class="description">
+            Join our Telegram Channel and embark on a journey to financial freedom! 💰🔄 Get insider tips, exclusive
+            opportunities, and a community of like-minded earners. Join the movement now 🚀
+        </p>
+
+        <!-- Counter with minimized background and centered text -->
+        <div class="counter-container">
+            <div class="counter" id="counter">10</div>
+        </div>
+    </div>
+
+    <script>
+        // Counter logic
+        let count = 10;
+        const counterElement = document.getElementById('counter');
+
+        const countdown = setInterval(() => {
+            count--;
+            counterElement.textContent = count;
+
+            if (count === 0) {
+                clearInterval(countdown);
+                // Hide the counter after reaching 0
+                counterElement.classList.add('hidden');
+            }
+        }, 1000); // Countdown interval set to 1 second
+    </script>
+
+</body>
+
+</html>
