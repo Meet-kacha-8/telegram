@@ -39,7 +39,7 @@
         }
         50% {
           transform: scale(1.1);
-        } 
+        }
       }
 
       .container {
@@ -54,8 +54,10 @@
         /* Neon Blue Border and Box Shadow */
         background-color: #ffffff;
         border-radius: 30px;
-        /* border: 4px solid #00ffff; */
-        box-shadow: 0 0 20px 5px hwb(0 0% 96% / 0.5);; /* Neon shadow */
+        box-shadow: 0 0 20px 5px hwb(0 0% 96% / 0.5); /* Neon shadow */
+        max-width: 90%; /* Ensure it doesn't take up too much space on small screens */
+        width: 600px; /* Set a max width for larger screens */
+        margin: 20px;
       }
 
       .profile-pic {
@@ -144,6 +146,76 @@
         visibility: hidden;
         pointer-events: none;
       }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px; /* Reduced padding */
+          width: 90%;
+        }
+
+        .profile-pic {
+          width: 100px;
+          height: 100px;
+        }
+
+        .name {
+          font-size: 28px;
+          font-weight: 500; /* Reduced font weight */
+        }
+
+        .tagline {
+          font-size: 20px;
+        }
+
+        .join-btn {
+          font-size: 22px;
+        }
+
+        .description {
+          font-size: 20px;
+        }
+
+        .counter {
+          font-size: 24px;
+        }
+
+        .counter-container {
+          margin-top: 20px; /* Reduced margin-top for the counter */
+        }
+      }
+
+      /* Additional mobile tweaks for very small screens */
+      @media (max-width: 480px) {
+        .container {
+          padding: 15px; /* Even smaller padding */
+        }
+
+        .name {
+          font-size: 24px;
+          font-weight: 400; /* Further reduced font weight */
+        }
+
+        .tagline {
+          font-size: 18px;
+        }
+
+        .join-btn {
+          font-size: 20px;
+        }
+
+        .description {
+          font-size: 18px;
+        }
+
+        .counter {
+          font-size: 22px;
+        }
+
+        .counter-container {
+          margin-top: 10px; /* More compact counter */
+        }
+      }
     </style>
   </head>
 
@@ -156,9 +228,7 @@
       />
       <h1 class="name">The Trade Bazaar</h1>
       <h2 class="tagline">Don’t Miss Out <span>Join Today!</span></h2>
-      <a href="https://t.me/the_trade_bazaar" class="join-btn"
-        >⚡ Join Channel 💰🚀</a
-      >
+      <a href="https://t.me/the_trade_bazaar" class="join-btn">⚡ Join Channel 💰🚀</a>
       <p class="description">
         Join our Telegram Channel and embark on a journey to financial freedom!
         💰🔄 Get insider tips, exclusive opportunities, and a community of
